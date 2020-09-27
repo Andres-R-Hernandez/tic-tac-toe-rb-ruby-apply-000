@@ -132,8 +132,8 @@ end
 
 #play Method
 def play(board)
-  turn(board)
   until over?(board)
+    turn(board)
     if won?(board)
       puts "Congratulations " + winner(board) + "!"
     elsif draw?(board)
