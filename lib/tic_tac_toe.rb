@@ -132,12 +132,13 @@ end
 
 #play Method
 def play(board)
-  if won?(board)
-    puts "Congratulations " + winner(board) + "!"
-  elsif draw?(board)
-    puts "Cat's Game!"
-  else
-    until over?(board)
+  until over?(board)
+    turn(board)
+    if won?(board)
+      puts "Congratulations " + winner(board) + "!"
+    elsif draw?(board)
+      puts "Cat's Game!"
+    else
       play(board)
     end
   end
